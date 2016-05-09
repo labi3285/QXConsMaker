@@ -73,7 +73,7 @@ Each one show end with MAKE(), which return an array of layoutConstrant than mad
 
 
 ###Other funcs
-1. You can get each constraint and change its con:
+1. You can get each constraint and change its constant:
 ```objc
         sharp.CENTER_X.EQUAL(SuperV).MAKE()
         sharp.TOP.EQUAL(SuperV).OFFSET(100).MAKE()
