@@ -1,9 +1,8 @@
 # QXConsMaker
-The easiest way to layout for swift. Wish enjoy it!
+##The easiest way to layout for swift. Wish enjoy it!
 
-Basic making methods, Each one show end with MAKE(), which return the layoutConstraint than made and installed:
+###Basic making methods, Each one show end with MAKE(), which return the layoutConstraint than made and installed:
 ![](https://github.com/labi3285/QXConsMaker/blob/master/pic_01.png)  
-
 ```objc
         A.LEFT.EQUAL(SuperV).OFFSET(20).MAKE()
         A.RIGHT.EQUAL(SuperV).OFFSET(-20).MAKE()
@@ -33,7 +32,8 @@ Basic making methods, Each one show end with MAKE(), which return the layoutCons
 ```
 
 
-A wrap package for common muti-layouts, Each one show end with MAKE(), which return an array of layoutConstrant than made and installed:
+###A wrap package for common muti-layouts, Each one show end with MAKE(), which return an array of layoutConstrant than made and installed:
+![](https://github.com/labi3285/QXConsMaker/blob/master/pic_02.png)  
 ```objc
         A.WIDTH.EQUAL(30).MAKE()
         A.HEIGHT.EQUAL(30).MAKE()
@@ -70,7 +70,7 @@ A wrap package for common muti-layouts, Each one show end with MAKE(), which ret
 ```
 
 
-Other funcs:
+###Other funcs:
 
 1. You can get each constraint and change its con:
 ```objc
@@ -84,17 +84,16 @@ Other funcs:
 
 2.You can remake constrains by remove all constrains than already installed to the view:
 ```objc
-            A!.REMOVE_CONSES()
-            A!.CENTER_X.EQUAL(view).MAKE()
-            A!.CENTER_Y.EQUAL(view).MAKE()
-            A!.MAKE(W: 100, H: 100)
+        A!.REMOVE_CONSES()
+        A!.CENTER_X.EQUAL(view).MAKE()
+        A!.CENTER_Y.EQUAL(view).MAKE()
+        A!.MAKE(W: 100, H: 100)
 
-            // remake
-            A!.REMOVE_CONSES()
-            A!.CENTER_X.EQUAL(view).MAKE()
-            A!.CENTER_Y.EQUAL(view).MAKE()
-            A!.MAKE(W: 200, H: 200)
-            
+        // remake
+        A!.REMOVE_CONSES()
+        A!.CENTER_X.EQUAL(view).MAKE()
+        A!.CENTER_Y.EQUAL(view).MAKE()
+        A!.MAKE(W: 200, H: 200)
 ```
 
 
