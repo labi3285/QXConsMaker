@@ -1,7 +1,8 @@
 # QXConsMaker
 ##The easiest way to layout for swift. Enjoy it!
 
-###Basic making methods, Each one show end with MAKE(), which return the layoutConstraint than made and installed:
+###Basic making methods
+Each line should end with MAKE(), which return the layoutConstraint than made and installed:
 ![](https://github.com/labi3285/QXConsMaker/blob/master/pic_01.png)  
 ```objc
         A.LEFT.EQUAL(SuperV).OFFSET(20).MAKE()
@@ -32,7 +33,8 @@
 ```
 
 
-###A wrap package for common muti-layouts, Each one show end with MAKE(), which return an array of layoutConstrant than made and installed:
+###A wrap package for common muti-layouts
+Each one show end with MAKE(), which return an array of layoutConstrant than made and installed:
 ![](https://github.com/labi3285/QXConsMaker/blob/master/pic_02.png)  
 ```objc
         A.WIDTH.EQUAL(30).MAKE()
@@ -70,8 +72,7 @@
 ```
 
 
-###Other funcs:
-
+###Other funcs
 1. You can get each constraint and change its con:
 ```objc
         sharp.CENTER_X.EQUAL(SuperV).MAKE()
