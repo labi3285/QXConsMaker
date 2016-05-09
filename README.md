@@ -1,5 +1,5 @@
 # QXConsMaker
-##The easiest way to layout for swift. Wish enjoy it!
+##The easiest way to layout for swift. Enjoy it!
 
 ###Basic making methods, Each one show end with MAKE(), which return the layoutConstraint than made and installed:
 ![](https://github.com/labi3285/QXConsMaker/blob/master/pic_01.png)  
