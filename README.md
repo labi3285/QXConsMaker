@@ -34,7 +34,7 @@ Each line should end with MAKE(), which return the layoutConstraint than made an
 
 
 ###A wrap package for common muti-layouts
-Each line show end with MAKE(), which return an array of layoutConstrant than made and installed:
+Each line should end with MAKE(), which return an array of layoutConstrant than made and installed:
 ![](https://github.com/labi3285/QXConsMaker/blob/master/pic_02.png)  
 ```objc
         A.WIDTH.EQUAL(30).MAKE()
