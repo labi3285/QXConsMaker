@@ -83,7 +83,7 @@ Each line should end with MAKE(), which return an array of layoutConstrant than 
         widthCons?.constant = CGFloat(100)
 ```
 
-2.You can remake constrains by remove all constrains than already installed to the view:
+2.You can remake constrains by removing all constrains than already installed to the view:
 ```objc
         A!.REMOVE_CONSES()
         A!.CENTER_X.EQUAL(view).MAKE()
