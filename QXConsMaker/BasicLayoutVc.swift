@@ -12,9 +12,9 @@ class BasicLayoutVc: UIViewController {
 
     override func viewDidLoad() {
         
-        view.backgroundColor = UIColor.whiteColor()
+        view.backgroundColor = UIColor.white
         
-        let SuperV = view
+        let SuperV = view!
         
         let A = NewSharp(title: "A", inView: view)
         let B = NewSharp(title: "B", inView: A)

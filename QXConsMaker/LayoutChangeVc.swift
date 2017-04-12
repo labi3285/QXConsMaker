@@ -15,16 +15,16 @@ class LayoutChangeVc: UIViewController {
 
     override func viewDidLoad() {
         
-        view.backgroundColor = UIColor.whiteColor()
+        view.backgroundColor = UIColor.white
         
-        let SuperV = view
+        let SuperV = view!
 
         widthSlider = {
             let one = UISlider()
             one.minimumValue = 10
             one.maximumValue = 200
             view.addSubview(one)
-            one.addTarget(self, action: #selector(LayoutChangeVc.widthSliderValueChange(_:)), forControlEvents: UIControlEvents.ValueChanged)
+            one.addTarget(self, action: #selector(LayoutChangeVc.widthSliderValueChange(_:)), for: UIControlEvents.valueChanged)
             return one
             }()
         
@@ -41,7 +41,7 @@ class LayoutChangeVc: UIViewController {
         
     }
     
-    func widthSliderValueChange(sender: UISlider) {
+    func widthSliderValueChange(_ sender: UISlider) {
         widthCons?.constant = CGFloat(sender.value)
     }
     

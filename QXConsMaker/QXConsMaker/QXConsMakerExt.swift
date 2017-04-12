@@ -1,6 +1,6 @@
 //
 //  QXConsMakerExt.swift
-//  QXAutoLayoutDemo
+//  QXConsMaker
 //
 //  Created by Richard.q.x on 16/5/6.
 //  Copyright © 2016年 labi3285_lab. All rights reserved.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public func MAKE_EQUAL_WIDTH(views: UIView ...) -> [NSLayoutConstraint] {
+@discardableResult public func MAKE_EQUAL_WIDTH(_ views: UIView ...) -> [NSLayoutConstraint] {
     var cones = [NSLayoutConstraint]()
     var first: UIView? = nil
     for v in views {
@@ -22,7 +22,7 @@ public func MAKE_EQUAL_WIDTH(views: UIView ...) -> [NSLayoutConstraint] {
     return cones
 }
 
-public func MAKE_EQUAL_HEIGHT(views: UIView ...) -> [NSLayoutConstraint] {
+@discardableResult public func MAKE_EQUAL_HEIGHT(_ views: UIView ...) -> [NSLayoutConstraint] {
     var cones = [NSLayoutConstraint]()
     var first: UIView? = nil
     for v in views {
@@ -36,7 +36,7 @@ public func MAKE_EQUAL_HEIGHT(views: UIView ...) -> [NSLayoutConstraint] {
     return cones
 }
 
-public func MAKE_EQUAL_SIZE(views: UIView ...) -> [NSLayoutConstraint] {
+@discardableResult public func MAKE_EQUAL_SIZE(_ views: UIView ...) -> [NSLayoutConstraint] {
     var cones = [NSLayoutConstraint]()
     var first: UIView? = nil
     for v in views {
@@ -53,17 +53,17 @@ public func MAKE_EQUAL_SIZE(views: UIView ...) -> [NSLayoutConstraint] {
 
 extension UIView {
     
-    func IN(V: UIView) -> QXConsesMaker        { return QXConsesMaker.updateMaker(view: self, containerView: V, isIn: true, possition: nil) }
+    func IN(_ V: UIView) -> QXConsesMaker        { return QXConsesMaker.updateMaker(view: self, containerView: V, isIn: true, possition: nil) }
     
-    func TOP(V: UIView) -> QXConsesMaker       { return QXConsesMaker.updateMaker(view: self, containerView: V, isIn: false, possition: .Top) }
-
-    func LEFT(V: UIView) -> QXConsesMaker      { return QXConsesMaker.updateMaker(view: self, containerView: V, isIn: false, possition: .Left) }
+    func TOP(_ V: UIView) -> QXConsesMaker       { return QXConsesMaker.updateMaker(view: self, containerView: V, isIn: false, possition: .top) }
     
-    func BOTTOM(V: UIView) -> QXConsesMaker    { return QXConsesMaker.updateMaker(view: self, containerView: V, isIn: false, possition: .Bottom) }
+    func LEFT(_ V: UIView) -> QXConsesMaker      { return QXConsesMaker.updateMaker(view: self, containerView: V, isIn: false, possition: .left) }
     
-    func RIGHT(V: UIView) -> QXConsesMaker     { return QXConsesMaker.updateMaker(view: self, containerView: V, isIn: false, possition: .Right) }
+    func BOTTOM(_ V: UIView) -> QXConsesMaker    { return QXConsesMaker.updateMaker(view: self, containerView: V, isIn: false, possition: .bottom) }
     
-    func MAKE(W w: CGFloat, H h: CGFloat) -> [NSLayoutConstraint] {
+    func RIGHT(_ V: UIView) -> QXConsesMaker     { return QXConsesMaker.updateMaker(view: self, containerView: V, isIn: false, possition: .right) }
+    
+    @discardableResult  func MAKE(W w: CGFloat, H h: CGFloat) -> [NSLayoutConstraint] {
         let cons1 = self.WIDTH.EQUAL(w).MAKE()
         let cons2 = self.HEIGHT.EQUAL(h).MAKE()
         return [cons1, cons2]
@@ -73,59 +73,59 @@ extension UIView {
 
 extension QXConsesMaker {
     
-    func SIZE(W: CGFloat, _ H: CGFloat) -> QXConsesMaker { return WIDTH(W).HEIGHT(H) }
+    func SIZE(_ W: CGFloat, _ H: CGFloat) -> QXConsesMaker { return WIDTH(W).HEIGHT(H) }
     
-    func TOP(T: CGFloat) -> QXConsesMaker       { return QXConsesMaker.updateMaker(top: T) }
-    func LEFT(L: CGFloat) -> QXConsesMaker      { return QXConsesMaker.updateMaker(left: L) }
-    func BOTTOM(B: CGFloat) -> QXConsesMaker    { return QXConsesMaker.updateMaker(bottom: B) }
-    func RIGHT(R: CGFloat) -> QXConsesMaker     { return QXConsesMaker.updateMaker(right: R) }
-    func WIDTH(W: CGFloat) -> QXConsesMaker     { return QXConsesMaker.updateMaker(width: W) }
-    func HEIGHT(H: CGFloat) -> QXConsesMaker    { return QXConsesMaker.updateMaker(height: H) }
+    func TOP(_ T: CGFloat) -> QXConsesMaker       { return QXConsesMaker.updateMaker(top: T) }
+    func LEFT(_ L: CGFloat) -> QXConsesMaker      { return QXConsesMaker.updateMaker(left: L) }
+    func BOTTOM(_ B: CGFloat) -> QXConsesMaker    { return QXConsesMaker.updateMaker(bottom: B) }
+    func RIGHT(_ R: CGFloat) -> QXConsesMaker     { return QXConsesMaker.updateMaker(right: R) }
+    func WIDTH(_ W: CGFloat) -> QXConsesMaker     { return QXConsesMaker.updateMaker(width: W) }
+    func HEIGHT(_ H: CGFloat) -> QXConsesMaker    { return QXConsesMaker.updateMaker(height: H) }
     
-    func OFFSET(O: CGFloat) -> QXConsesMaker    { return QXConsesMaker.updateMaker(offset: O) }
-
+    func OFFSET(_ O: CGFloat) -> QXConsesMaker    { return QXConsesMaker.updateMaker(offset: O) }
+    
     var CENTER: QXConsesMaker                   { return QXConsesMaker.updateMaker(center: true) }
     var CENTER_X: QXConsesMaker                 { return QXConsesMaker.updateMaker(centerX: true) }
     var CENTER_Y: QXConsesMaker                 { return QXConsesMaker.updateMaker(centerY: true) }
-
+    
     var LEFT: QXConsesMaker                     { return LEFT(0) }
     var RIGHT: QXConsesMaker                    { return RIGHT(0) }
     var TOP: QXConsesMaker                      { return TOP(0) }
     var BOTTOM: QXConsesMaker                   { return BOTTOM(0) }
     
-    func MAKE() -> [NSLayoutConstraint]         { return QXConsesMaker.makeUpConstraints() }
-
+    @discardableResult func MAKE() -> [NSLayoutConstraint]         { return QXConsesMaker.makeUpConstraints() }
+    
 }
 
 enum QXConsesPossion {
-    case Top
-    case Left
-    case Bottom
-    case Right
+    case top
+    case left
+    case bottom
+    case right
 }
 
 struct QXConsesMaker {
     
-    private var isIn: Bool = true
-    private var view: UIView?
-    private var containerView: UIView?
+    fileprivate var isIn: Bool = true
+    fileprivate var view: UIView?
+    fileprivate var containerView: UIView?
     
-    private var topMargin: CGFloat?
-    private var leftMargin: CGFloat?
-    private var bottomMargin: CGFloat?
-    private var rightMargin: CGFloat?
-
-    private var offset: CGFloat?
-
-    private var width: CGFloat?
-    private var height: CGFloat?
+    fileprivate var topMargin: CGFloat?
+    fileprivate var leftMargin: CGFloat?
+    fileprivate var bottomMargin: CGFloat?
+    fileprivate var rightMargin: CGFloat?
     
-    private var possition: QXConsesPossion?
-    private var centerX: Bool = false
-    private var centerY: Bool = false
-    private var center: Bool = false
-
-    private static var maker = QXConsesMaker()
+    fileprivate var offset: CGFloat?
+    
+    fileprivate var width: CGFloat?
+    fileprivate var height: CGFloat?
+    
+    fileprivate var possition: QXConsesPossion?
+    fileprivate var centerX: Bool = false
+    fileprivate var centerY: Bool = false
+    fileprivate var center: Bool = false
+    
+    fileprivate static var maker = QXConsesMaker()
     
     static func updateMaker(view v: UIView, containerView cv: UIView, isIn i: Bool, possition p: QXConsesPossion?) -> QXConsesMaker {
         self.maker.isIn = i
@@ -134,14 +134,14 @@ struct QXConsesMaker {
         self.maker.possition = p
         if let ps = p {
             switch ps {
-            case .Top: self.maker.topMargin = 0
-            case .Left: self.maker.leftMargin = 0
-            case .Bottom: self.maker.bottomMargin = 0
-            case .Right: self.maker.rightMargin = 0
+            case .top: self.maker.topMargin = 0
+            case .left: self.maker.leftMargin = 0
+            case .bottom: self.maker.bottomMargin = 0
+            case .right: self.maker.rightMargin = 0
             }
         }
         if i == false {
-            self.updateMaker(offset: 0)
+            _ = self.updateMaker(offset: 0)
         }
         return self.maker
     }
@@ -207,13 +207,13 @@ struct QXConsesMaker {
             
             if let pos = QXConsesMaker.maker.possition {
                 switch pos {
-                case .Top:
+                case .top:
                     QXConsesMaker.maker.topMargin = nil
-                case .Left:
+                case .left:
                     QXConsesMaker.maker.leftMargin = nil
-                case .Bottom:
+                case .bottom:
                     QXConsesMaker.maker.bottomMargin = nil
-                case .Right:
+                case .right:
                     QXConsesMaker.maker.rightMargin = nil
                 }
             }
@@ -221,26 +221,26 @@ struct QXConsesMaker {
             if QXConsesMaker.maker.isIn {
                 if let pos = QXConsesMaker.maker.possition {
                     switch pos {
-                    case .Top:
+                    case .top:
                         conses.append(view.TOP.EQUAL(containerView).OFFSET(offset).MAKE())
-                    case .Left:
+                    case .left:
                         conses.append(view.LEFT.EQUAL(containerView).OFFSET(offset).MAKE())
-                    case .Bottom:
+                    case .bottom:
                         conses.append(view.BOTTOM.EQUAL(containerView).OFFSET(-offset).MAKE())
-                    case .Right:
+                    case .right:
                         conses.append(view.RIGHT.EQUAL(containerView).OFFSET(-offset).MAKE())
                     }
                 }
             } else {
                 if let pos = QXConsesMaker.maker.possition {
                     switch pos {
-                    case .Top:
+                    case .top:
                         conses.append(view.BOTTOM.EQUAL(containerView).TOP.OFFSET(-offset).MAKE())
-                    case .Left:
+                    case .left:
                         conses.append(view.RIGHT.EQUAL(containerView).LEFT.OFFSET(-offset).MAKE())
-                    case .Bottom:
+                    case .bottom:
                         conses.append(view.TOP.EQUAL(containerView).BOTTOM.OFFSET(offset).MAKE())
-                    case .Right:
+                    case .right:
                         conses.append(view.LEFT.EQUAL(containerView).RIGHT.OFFSET(offset).MAKE())
                     }
                 }
@@ -278,9 +278,9 @@ struct QXConsesMaker {
         if QXConsesMaker.maker.center {
             if let pos = QXConsesMaker.maker.possition {
                 switch pos {
-                case .Bottom, .Top:
+                case .bottom, .top:
                     conses.append(view.CENTER_X.EQUAL(containerView).MAKE())
-                case .Left, .Right:
+                case .left, .right:
                     conses.append(view.CENTER_Y.EQUAL(containerView).MAKE())
                 }
             } else {
@@ -300,5 +300,5 @@ struct QXConsesMaker {
         return conses
         
     }
-
+    
 }

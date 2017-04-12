@@ -15,7 +15,7 @@ class RemakeLayoutVc: UIViewController {
     
     override func viewDidLoad() {
         
-        view.backgroundColor = UIColor.whiteColor()
+        view.backgroundColor = UIColor.white
         
         let msg = NewLabel(title: "click to change layout", inView: self.view)
         
@@ -31,7 +31,7 @@ class RemakeLayoutVc: UIViewController {
         
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         i += 1
         
         let v = i % 3
@@ -53,9 +53,9 @@ class RemakeLayoutVc: UIViewController {
             A!.MAKE(W: 100, H: 100)
         }
         
-        UIView.animateWithDuration(1) {
+        UIView.animate(withDuration: 1, animations: {
             self.view.layoutIfNeeded()
-        }
+        }) 
 
     }
     

@@ -131,6 +131,7 @@
 					2E5E5E2C1CE06A690013605B = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 4S3D2DBDGU;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -296,6 +297,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "labi3285-lab.QXConsMaker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -307,6 +309,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "labi3285-lab.QXConsMaker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -329,6 +332,7 @@
 				2E5E5E411CE06A690013605B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

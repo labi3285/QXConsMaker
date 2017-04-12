@@ -35,8 +35,8 @@ public func NewLabel(title t: String, inView: UIView) -> UILabel {
     let backColor = UIColor(red: CGFloat(arc4random_uniform(255))/255.0, green: CGFloat(arc4random_uniform(255))/255.0, blue: CGFloat(arc4random_uniform(255))/255.0, alpha: 0.5)
     let label = UILabel()
     label.text = t
-    label.font = UIFont.systemFontOfSize(16)
-    label.textAlignment = NSTextAlignment.Center
+    label.font = UIFont.systemFont(ofSize: 16)
+    label.textAlignment = NSTextAlignment.center
     label.backgroundColor = backColor
     inView.addSubview(label)
     return label
@@ -55,18 +55,18 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.whiteColor()
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+        view.backgroundColor = UIColor.white
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return models.count;
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("UITableViewCell")!
-        if let str: NSString = NSStringFromClass(models[indexPath.row]) {
-            let arr = str.componentsSeparatedByString(".")
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell")!
+        if let str: NSString = NSStringFromClass(models[indexPath.row]) as NSString {
+            let arr = str.components(separatedBy: ".")
             if arr.count >= 2 {
                 cell.textLabel?.text = arr[1]
             }
@@ -74,7 +74,7 @@ class ViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cls = models[indexPath.row] as? UIViewController.Type {
             let vc = cls.init()
             navigationController?.pushViewController(vc, animated: true)

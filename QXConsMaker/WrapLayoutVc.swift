@@ -12,9 +12,9 @@ class WrapLayoutVc: UIViewController {
 
     override func viewDidLoad() {
         
-        view.backgroundColor = UIColor.whiteColor()
+        view.backgroundColor = UIColor.white
         
-        let SuperV = view
+        let SuperV = view!
         
         let Back = NewSharp(title: "Back", inView: view)
 
