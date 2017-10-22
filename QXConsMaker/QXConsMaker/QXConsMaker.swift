@@ -102,8 +102,8 @@ struct QXConsMaker {
     
     fileprivate var newProcess: Bool = true
     
-    fileprivate var firstItem: UIView? = nil
-    fileprivate var secondItem: UIView? = nil
+    fileprivate weak var firstItem: UIView? = nil
+    fileprivate weak var secondItem: UIView? = nil
     fileprivate var firstItemAttribute: NSLayoutAttribute? = nil
     fileprivate var relationship: NSLayoutRelation? = nil
     fileprivate var secondItemAttribute: NSLayoutAttribute? = nil

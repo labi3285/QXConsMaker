@@ -107,8 +107,8 @@ enum QXConsesPossion {
 struct QXConsesMaker {
     
     fileprivate var isIn: Bool = true
-    fileprivate var view: UIView?
-    fileprivate var containerView: UIView?
+    fileprivate weak var view: UIView?
+    fileprivate weak var containerView: UIView?
     
     fileprivate var topMargin: CGFloat?
     fileprivate var leftMargin: CGFloat?
