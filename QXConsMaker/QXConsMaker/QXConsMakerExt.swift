@@ -1,6 +1,6 @@
 //
 //  QXConsMakerExt.swift
-//  QXConsMaker
+//  QXAutoLayoutDemo
 //
 //  Created by Richard.q.x on 16/5/6.
 //  Copyright © 2016年 labi3285_lab. All rights reserved.
@@ -302,3 +302,4 @@ struct QXConsesMaker {
     }
     
 }
+

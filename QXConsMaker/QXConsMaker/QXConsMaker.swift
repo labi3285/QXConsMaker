@@ -1,6 +1,6 @@
 //
 //  QXConsMaker.swift
-//  QXConsMaker
+//  QXAutoLayoutDemo
 //
 //  Created by Richard.q.x on 16/5/6.
 //  Copyright © 2016年 labi3285_lab. All rights reserved.
@@ -238,14 +238,14 @@ struct QXConsMaker {
         let v1 = c.firstItem as! UIView
         if let v2 = c.secondItem as? UIView {
             if let v = getAncestorView(view1: v1, view2: v2) {
-                v.addConstraint(c)
                 c.priority = UILayoutPriority(p)
+                v.addConstraint(c)
             } else {
-                //assert(true, "\(c) install failed!")
+                assert(true, "\(c) install failed!")
             }
         } else {
-            v1.addConstraint(c)
             c.priority = UILayoutPriority(p)
+            v1.addConstraint(c)
         }
     }
     
