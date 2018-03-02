@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "QXConsMaker"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "The easiest way to layout in swift."
   s.description  = <<-DESC
                     The easiest way to layout in swift. Just enjoy!
