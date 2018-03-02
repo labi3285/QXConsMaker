@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.author       = { "labi3285" => "766043285@qq.com" }
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/labi3285/QXConsMaker.git", :tag => "#{s.version}" }
-  s.source_files  = "QXConsMaker", "QXConsMaker/QXConsMaker/*.swift"
+  s.source_files  = "QXConsMaker", "QXConsMaker/QXConsMaker/QXConsMaker/*.swift"
   s.requires_arc = true
 
 end
