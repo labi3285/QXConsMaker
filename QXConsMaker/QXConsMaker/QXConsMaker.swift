@@ -10,38 +10,38 @@ import UIKit
 
 //MARK: -
 
-extension UIView {
+public extension UIView {
     
-    var LEFT: QXConsMaker       { return QXConsMaker.updateMaker(view: self, attribute: .left) }
-    var RIGHT: QXConsMaker      { return QXConsMaker.updateMaker(view: self, attribute: .right) }
-    var TOP: QXConsMaker        { return QXConsMaker.updateMaker(view: self, attribute: .top) }
-    var BOTTOM: QXConsMaker     { return QXConsMaker.updateMaker(view: self, attribute: .bottom) }
+    public var LEFT: QXConsMaker       { return QXConsMaker.updateMaker(view: self, attribute: .left) }
+    public var RIGHT: QXConsMaker      { return QXConsMaker.updateMaker(view: self, attribute: .right) }
+    public var TOP: QXConsMaker        { return QXConsMaker.updateMaker(view: self, attribute: .top) }
+    public var BOTTOM: QXConsMaker     { return QXConsMaker.updateMaker(view: self, attribute: .bottom) }
     
-    var LEADING: QXConsMaker    { return QXConsMaker.updateMaker(view: self, attribute: .leading) }
-    var TRAILING: QXConsMaker   { return QXConsMaker.updateMaker(view: self, attribute: .trailing) }
-    var WIDTH: QXConsMaker      { return QXConsMaker.updateMaker(view: self, attribute: .width) }
-    var HEIGHT: QXConsMaker     { return QXConsMaker.updateMaker(view: self, attribute: .height) }
-    var CENTER_X: QXConsMaker   { return QXConsMaker.updateMaker(view: self, attribute: .centerX) }
-    var CENTER_Y: QXConsMaker   { return QXConsMaker.updateMaker(view: self, attribute: .centerY) }
-    var BASELINE: QXConsMaker   { return QXConsMaker.updateMaker(view: self, attribute: .lastBaseline) }
+    public var LEADING: QXConsMaker    { return QXConsMaker.updateMaker(view: self, attribute: .leading) }
+    public var TRAILING: QXConsMaker   { return QXConsMaker.updateMaker(view: self, attribute: .trailing) }
+    public var WIDTH: QXConsMaker      { return QXConsMaker.updateMaker(view: self, attribute: .width) }
+    public var HEIGHT: QXConsMaker     { return QXConsMaker.updateMaker(view: self, attribute: .height) }
+    public var CENTER_X: QXConsMaker   { return QXConsMaker.updateMaker(view: self, attribute: .centerX) }
+    public var CENTER_Y: QXConsMaker   { return QXConsMaker.updateMaker(view: self, attribute: .centerY) }
+    public var BASELINE: QXConsMaker   { return QXConsMaker.updateMaker(view: self, attribute: .lastBaseline) }
     
-    var FIRST_BASELINE: QXConsMaker             { return QXConsMaker.updateMaker(view: self, attribute: .firstBaseline) }
-    var LEFT_MARGIN: QXConsMaker                { return QXConsMaker.updateMaker(view: self, attribute: .leftMargin) }
-    var RIGHT_MARGIN: QXConsMaker               { return QXConsMaker.updateMaker(view: self, attribute: .rightMargin) }
-    var TOP_MARGIN: QXConsMaker                 { return QXConsMaker.updateMaker(view: self, attribute: .topMargin) }
-    var BOTTOM_MARGIN: QXConsMaker              { return QXConsMaker.updateMaker(view: self, attribute: .bottomMargin) }
-    var LEADING_MARGIN: QXConsMaker             { return QXConsMaker.updateMaker(view: self, attribute: .leadingMargin) }
-    var TRAILING_MARGIN: QXConsMaker            { return QXConsMaker.updateMaker(view: self, attribute: .trailingMargin) }
-    var CENTER_X_WITHIN_MARGINS: QXConsMaker    { return QXConsMaker.updateMaker(view: self, attribute: .centerXWithinMargins) }
-    var CENTER_Y_WITHIN_MARGINS: QXConsMaker    { return QXConsMaker.updateMaker(view: self, attribute: .centerYWithinMargins) }
+    public var FIRST_BASELINE: QXConsMaker             { return QXConsMaker.updateMaker(view: self, attribute: .firstBaseline) }
+    public var LEFT_MARGIN: QXConsMaker                { return QXConsMaker.updateMaker(view: self, attribute: .leftMargin) }
+    public var RIGHT_MARGIN: QXConsMaker               { return QXConsMaker.updateMaker(view: self, attribute: .rightMargin) }
+    public var TOP_MARGIN: QXConsMaker                 { return QXConsMaker.updateMaker(view: self, attribute: .topMargin) }
+    public var BOTTOM_MARGIN: QXConsMaker              { return QXConsMaker.updateMaker(view: self, attribute: .bottomMargin) }
+    public var LEADING_MARGIN: QXConsMaker             { return QXConsMaker.updateMaker(view: self, attribute: .leadingMargin) }
+    public var TRAILING_MARGIN: QXConsMaker            { return QXConsMaker.updateMaker(view: self, attribute: .trailingMargin) }
+    public var CENTER_X_WITHIN_MARGINS: QXConsMaker    { return QXConsMaker.updateMaker(view: self, attribute: .centerXWithinMargins) }
+    public var CENTER_Y_WITHIN_MARGINS: QXConsMaker    { return QXConsMaker.updateMaker(view: self, attribute: .centerYWithinMargins) }
     
-    var NOT_AN_ATTRIBUTE: QXConsMaker    { return QXConsMaker.updateMaker(view: self, attribute: .notAnAttribute) }
+    public var NOT_AN_ATTRIBUTE: QXConsMaker    { return QXConsMaker.updateMaker(view: self, attribute: .notAnAttribute) }
     
     
-    func OFFSET(_ O: CGFloat) -> QXConsMaker  { return QXConsMaker.updateMaker(offset: O) }
-    func RATIO(_ R: CGFloat) -> QXConsMaker   { return QXConsMaker.updateMaker(ratio: R) }
+    public func OFFSET(_ O: CGFloat) -> QXConsMaker  { return QXConsMaker.updateMaker(offset: O) }
+    public func RATIO(_ R: CGFloat) -> QXConsMaker   { return QXConsMaker.updateMaker(ratio: R) }
     
-    func REMOVE_CONSES()    { QXConsMaker.removeConstraints(view: self) }
+    public func REMOVE_CONSES()    { QXConsMaker.removeConstraints(view: self) }
     
 }
 
@@ -50,53 +50,52 @@ extension UIView {
 
 extension QXConsMaker {
     
-    var LEFT: QXConsMaker       { return QXConsMaker.updateMaker(attribute: .left) }
-    var RIGHT: QXConsMaker      { return QXConsMaker.updateMaker(attribute: .right) }
-    var TOP: QXConsMaker        { return QXConsMaker.updateMaker(attribute: .top) }
-    var BOTTOM: QXConsMaker     { return QXConsMaker.updateMaker(attribute: .bottom) }
+    public var LEFT: QXConsMaker       { return QXConsMaker.updateMaker(attribute: .left) }
+    public var RIGHT: QXConsMaker      { return QXConsMaker.updateMaker(attribute: .right) }
+    public var TOP: QXConsMaker        { return QXConsMaker.updateMaker(attribute: .top) }
+    public var BOTTOM: QXConsMaker     { return QXConsMaker.updateMaker(attribute: .bottom) }
     
-    var LEADING: QXConsMaker    { return QXConsMaker.updateMaker(attribute: .leading) }
-    var TRAILING: QXConsMaker   { return QXConsMaker.updateMaker(attribute: .trailing) }
-    var WIDTH: QXConsMaker      { return QXConsMaker.updateMaker(attribute: .width) }
-    var HEIGHT: QXConsMaker     { return QXConsMaker.updateMaker(attribute: .height) }
-    var CENTER_X: QXConsMaker   { return QXConsMaker.updateMaker(attribute: .centerX) }
-    var CENTER_Y: QXConsMaker   { return QXConsMaker.updateMaker(attribute: .centerY) }
-    var BASELINE: QXConsMaker   { return QXConsMaker.updateMaker(attribute: .lastBaseline) }
+    public var LEADING: QXConsMaker    { return QXConsMaker.updateMaker(attribute: .leading) }
+    public var TRAILING: QXConsMaker   { return QXConsMaker.updateMaker(attribute: .trailing) }
+    public var WIDTH: QXConsMaker      { return QXConsMaker.updateMaker(attribute: .width) }
+    public var HEIGHT: QXConsMaker     { return QXConsMaker.updateMaker(attribute: .height) }
+    public var CENTER_X: QXConsMaker   { return QXConsMaker.updateMaker(attribute: .centerX) }
+    public var CENTER_Y: QXConsMaker   { return QXConsMaker.updateMaker(attribute: .centerY) }
+    public var BASELINE: QXConsMaker   { return QXConsMaker.updateMaker(attribute: .lastBaseline) }
     
-    var FIRST_BASELINE: QXConsMaker             { return QXConsMaker.updateMaker(attribute: .firstBaseline) }
-    var LEFT_MARGIN: QXConsMaker                { return QXConsMaker.updateMaker(attribute: .leftMargin) }
-    var RIGHT_MARGIN: QXConsMaker               { return QXConsMaker.updateMaker(attribute: .rightMargin) }
-    var TOP_MARGIN: QXConsMaker                 { return QXConsMaker.updateMaker(attribute: .topMargin) }
-    var BOTTOM_MARGIN: QXConsMaker              { return QXConsMaker.updateMaker(attribute: .bottomMargin) }
-    var LEADING_MARGIN: QXConsMaker             { return QXConsMaker.updateMaker(attribute: .leadingMargin) }
-    var TRAILING_MARGIN: QXConsMaker            { return QXConsMaker.updateMaker(attribute: .trailingMargin) }
-    var CENTER_X_WITHIN_MARGINS: QXConsMaker    { return QXConsMaker.updateMaker(attribute: .centerXWithinMargins) }
-    var CENTER_Y_WITHIN_MARGINS: QXConsMaker    { return QXConsMaker.updateMaker(attribute: .centerYWithinMargins) }
+    public var FIRST_BASELINE: QXConsMaker             { return QXConsMaker.updateMaker(attribute: .firstBaseline) }
+    public var LEFT_MARGIN: QXConsMaker                { return QXConsMaker.updateMaker(attribute: .leftMargin) }
+    public var RIGHT_MARGIN: QXConsMaker               { return QXConsMaker.updateMaker(attribute: .rightMargin) }
+    public var TOP_MARGIN: QXConsMaker                 { return QXConsMaker.updateMaker(attribute: .topMargin) }
+    public var BOTTOM_MARGIN: QXConsMaker              { return QXConsMaker.updateMaker(attribute: .bottomMargin) }
+    public var LEADING_MARGIN: QXConsMaker             { return QXConsMaker.updateMaker(attribute: .leadingMargin) }
+    public var TRAILING_MARGIN: QXConsMaker            { return QXConsMaker.updateMaker(attribute: .trailingMargin) }
+    public var CENTER_X_WITHIN_MARGINS: QXConsMaker    { return QXConsMaker.updateMaker(attribute: .centerXWithinMargins) }
+    public var CENTER_Y_WITHIN_MARGINS: QXConsMaker    { return QXConsMaker.updateMaker(attribute: .centerYWithinMargins) }
     
-    var NOT_AN_ATTRIBUTE: QXConsMaker    { return QXConsMaker.updateMaker(attribute: .notAnAttribute) }
+    public var NOT_AN_ATTRIBUTE: QXConsMaker    { return QXConsMaker.updateMaker(attribute: .notAnAttribute) }
     
-    func EQUAL(_ V: UIView) -> QXConsMaker                { return QXConsMaker.updateMaker(view: V, relationship: .equal) }
-    func GREAT_THAN_OR_EQUAL(_ V: UIView) -> QXConsMaker  { return QXConsMaker.updateMaker(view: V, relationship: .greaterThanOrEqual) }
-    func LESS_THAN_OR_EQUAL(_ V: UIView) -> QXConsMaker   { return QXConsMaker.updateMaker(view: V, relationship: .lessThanOrEqual) }
+    public func EQUAL(_ V: UIView) -> QXConsMaker                { return QXConsMaker.updateMaker(view: V, relationship: .equal) }
+    public func GREAT_THAN_OR_EQUAL(_ V: UIView) -> QXConsMaker  { return QXConsMaker.updateMaker(view: V, relationship: .greaterThanOrEqual) }
+    public func LESS_THAN_OR_EQUAL(_ V: UIView) -> QXConsMaker   { return QXConsMaker.updateMaker(view: V, relationship: .lessThanOrEqual) }
     
-    func EQUAL(_ V: CGFloat) -> QXConsMaker               { return QXConsMaker.updateMaker(value: V, relationship: .equal) }
-    func GREAT_THAN_OR_EQUAL(_ V: CGFloat) -> QXConsMaker { return QXConsMaker.updateMaker(value: V, relationship: .greaterThanOrEqual) }
-    func LESS_THAN_OR_EQUAL(_ V: CGFloat) -> QXConsMaker  { return QXConsMaker.updateMaker(value: V, relationship: .lessThanOrEqual) }
-    
-    
-    func OFFSET(_ O: CGFloat) -> QXConsMaker      { return QXConsMaker.updateMaker(offset: O) }
-    func RATIO(_ R: CGFloat) -> QXConsMaker       { return QXConsMaker.updateMaker(ratio: R) }
-    func PRIORITY(_ P: CGFloat) -> QXConsMaker    { return QXConsMaker.updateMaker(priority: P) }
+    public func EQUAL(_ V: CGFloat) -> QXConsMaker               { return QXConsMaker.updateMaker(value: V, relationship: .equal) }
+    public func GREAT_THAN_OR_EQUAL(_ V: CGFloat) -> QXConsMaker { return QXConsMaker.updateMaker(value: V, relationship: .greaterThanOrEqual) }
+    public func LESS_THAN_OR_EQUAL(_ V: CGFloat) -> QXConsMaker  { return QXConsMaker.updateMaker(value: V, relationship: .lessThanOrEqual) }
     
     
-    @discardableResult func MAKE() -> NSLayoutConstraint   { return QXConsMaker.makeUpConstraint() }
+    public func OFFSET(_ O: CGFloat) -> QXConsMaker      { return QXConsMaker.updateMaker(offset: O) }
+    public func RATIO(_ R: CGFloat) -> QXConsMaker       { return QXConsMaker.updateMaker(ratio: R) }
+    public func PRIORITY(_ P: CGFloat) -> QXConsMaker    { return QXConsMaker.updateMaker(priority: P) }
+    
+    
+    @discardableResult public func MAKE() -> NSLayoutConstraint   { return QXConsMaker.makeUpConstraint() }
     
 }
 
 
 //MARK: -
-
-struct QXConsMaker {
+public struct QXConsMaker {
     
     //MARK: vars
     
@@ -118,7 +117,7 @@ struct QXConsMaker {
     
     //MARK: base tools
     
-    static func updateMaker(view v: UIView, attribute a: NSLayoutAttribute) -> QXConsMaker {
+    fileprivate static func updateMaker(view v: UIView, attribute a: NSLayoutAttribute) -> QXConsMaker {
         if self.maker.newProcess {
             self.maker.firstItem = v
             self.maker.firstItemAttribute = a
@@ -131,40 +130,40 @@ struct QXConsMaker {
         return self.maker
     }
     
-    static func updateMaker(attribute a: NSLayoutAttribute) -> QXConsMaker {
+    fileprivate static func updateMaker(attribute a: NSLayoutAttribute) -> QXConsMaker {
         self.maker.secondItemAttribute = a
         return self.maker
     }
     
-    static func updateMaker(view v: UIView, relationship r: NSLayoutRelation) -> QXConsMaker {
+    fileprivate static func updateMaker(view v: UIView, relationship r: NSLayoutRelation) -> QXConsMaker {
         self.maker.relationship = r
         self.maker.secondItem = v
         return self.maker
     }
     
-    static func updateMaker(value v: CGFloat, relationship r: NSLayoutRelation) -> QXConsMaker {
+    fileprivate static func updateMaker(value v: CGFloat, relationship r: NSLayoutRelation) -> QXConsMaker {
         self.maker.relationship = r
         self.maker.secondItem = nil
         self.maker.offset = v
         return self.maker
     }
     
-    static func updateMaker(ratio r: CGFloat) -> QXConsMaker {
+    fileprivate static func updateMaker(ratio r: CGFloat) -> QXConsMaker {
         self.maker.ratio = r
         return self.maker
     }
     
-    static func updateMaker(offset o: CGFloat) -> QXConsMaker {
+    fileprivate static func updateMaker(offset o: CGFloat) -> QXConsMaker {
         self.maker.offset = o
         return self.maker
     }
     
-    static func updateMaker(priority p: CGFloat = 1000) -> QXConsMaker {
+    fileprivate static func updateMaker(priority p: CGFloat = 1000) -> QXConsMaker {
         self.maker.priority = p
         return self.maker
     }
     
-    static func makeUpConstraint() -> NSLayoutConstraint {
+    fileprivate static func makeUpConstraint() -> NSLayoutConstraint {
         if let v = QXConsMaker.maker.firstItem {
             v.translatesAutoresizingMaskIntoConstraints = false
         }
@@ -182,7 +181,7 @@ struct QXConsMaker {
         return cons
     }
     
-    static func removeConstraints(view v: UIView) {
+    fileprivate static func removeConstraints(view v: UIView) {
         for c in v.CONSES {
             let cons = c as! NSLayoutConstraint
             var view: UIView?
