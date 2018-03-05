@@ -238,13 +238,13 @@ struct QXConsMaker {
         let v1 = c.firstItem as! UIView
         if let v2 = c.secondItem as? UIView {
             if let v = getAncestorView(view1: v1, view2: v2) {
-                c.priority = UILayoutPriority(p)
+                c.priority = UILayoutPriority(Float(p))
                 v.addConstraint(c)
             } else {
                 assert(true, "\(c) install failed!")
             }
         } else {
-            c.priority = UILayoutPriority(p)
+            c.priority = UILayoutPriority(Float(p))
             v1.addConstraint(c)
         }
     }
