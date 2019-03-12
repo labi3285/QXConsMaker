@@ -103,9 +103,9 @@ public struct QXConsMaker {
     
     fileprivate weak var firstItem: UIView? = nil
     fileprivate weak var secondItem: UIView? = nil
-    fileprivate var firstItemAttribute: NSLayoutAttribute? = nil
-    fileprivate var relationship: NSLayoutRelation? = nil
-    fileprivate var secondItemAttribute: NSLayoutAttribute? = nil
+    fileprivate var firstItemAttribute: NSLayoutConstraint.Attribute? = nil
+    fileprivate var relationship: NSLayoutConstraint.Relation? = nil
+    fileprivate var secondItemAttribute: NSLayoutConstraint.Attribute? = nil
     fileprivate var ratio: CGFloat = 1.0
     fileprivate var offset: CGFloat = 0
     fileprivate var priority: CGFloat = 1000
@@ -117,7 +117,7 @@ public struct QXConsMaker {
     
     //MARK: base tools
     
-    fileprivate static func updateMaker(view v: UIView, attribute a: NSLayoutAttribute) -> QXConsMaker {
+    fileprivate static func updateMaker(view v: UIView, attribute a: NSLayoutConstraint.Attribute) -> QXConsMaker {
         if self.maker.newProcess {
             self.maker.firstItem = v
             self.maker.firstItemAttribute = a
@@ -130,18 +130,18 @@ public struct QXConsMaker {
         return self.maker
     }
     
-    fileprivate static func updateMaker(attribute a: NSLayoutAttribute) -> QXConsMaker {
+    fileprivate static func updateMaker(attribute a: NSLayoutConstraint.Attribute) -> QXConsMaker {
         self.maker.secondItemAttribute = a
         return self.maker
     }
     
-    fileprivate static func updateMaker(view v: UIView, relationship r: NSLayoutRelation) -> QXConsMaker {
+    fileprivate static func updateMaker(view v: UIView, relationship r: NSLayoutConstraint.Relation) -> QXConsMaker {
         self.maker.relationship = r
         self.maker.secondItem = v
         return self.maker
     }
     
-    fileprivate static func updateMaker(value v: CGFloat, relationship r: NSLayoutRelation) -> QXConsMaker {
+    fileprivate static func updateMaker(value v: CGFloat, relationship r: NSLayoutConstraint.Relation) -> QXConsMaker {
         self.maker.relationship = r
         self.maker.secondItem = nil
         self.maker.offset = v

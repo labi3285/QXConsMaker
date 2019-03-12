@@ -24,7 +24,7 @@ class LayoutChangeVc: UIViewController {
             one.minimumValue = 10
             one.maximumValue = 200
             view.addSubview(one)
-            one.addTarget(self, action: #selector(LayoutChangeVc.widthSliderValueChange(_:)), for: UIControlEvents.valueChanged)
+            one.addTarget(self, action: #selector(widthSliderValueChange(_:)), for: .valueChanged)
             return one
             }()
         
@@ -41,7 +41,7 @@ class LayoutChangeVc: UIViewController {
         
     }
     
-    func widthSliderValueChange(_ sender: UISlider) {
+    @objc func widthSliderValueChange(_ sender: UISlider) {
         widthCons?.constant = CGFloat(sender.value)
     }
     
