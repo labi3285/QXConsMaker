@@ -27,8 +27,8 @@ class RemakeLayoutVc: UIViewController {
         
         A!.CENTER_X.EQUAL(view).MAKE()
         A!.CENTER_Y.EQUAL(view).MAKE()
-        A!.MAKE(W: 100, H: 100)
-        
+        A!.WIDTH.EQUAL(100).MAKE()
+        A!.HEIGHT.EQUAL(100).MAKE()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -40,17 +40,20 @@ class RemakeLayoutVc: UIViewController {
             A!.REMOVE_CONSES()
             A!.CENTER_X.EQUAL(view).MAKE()
             A!.CENTER_Y.EQUAL(view).MAKE()
-            A!.MAKE(W: 100, H: 100)
+            A!.WIDTH.EQUAL(100).MAKE()
+            A!.HEIGHT.EQUAL(100).MAKE()
         } else if v == 1 {
             A!.REMOVE_CONSES()
             A!.CENTER_X.EQUAL(view).MAKE()
             A!.CENTER_Y.EQUAL(view).MAKE()
-            A!.MAKE(W: 200, H: 200)
+            A!.WIDTH.EQUAL(200).MAKE()
+            A!.HEIGHT.EQUAL(200).MAKE()
         } else {
             A!.REMOVE_CONSES()
             A!.LEFT.EQUAL(view).MAKE()
             A!.CENTER_Y.EQUAL(view).MAKE()
-            A!.MAKE(W: 100, H: 100)
+            A!.WIDTH.EQUAL(100).MAKE()
+            A!.HEIGHT.EQUAL(100).MAKE()
         }
         
         UIView.animate(withDuration: 1, animations: {

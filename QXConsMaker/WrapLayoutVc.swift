@@ -17,6 +17,7 @@ class WrapLayoutVc: UIViewController {
         view.backgroundColor = UIColor.white
         
         let SuperV = view!
+        let scale: CGFloat = 0.5
         
         let Back = NewSharp(title: "Back", inView: view)
 
@@ -46,36 +47,36 @@ class WrapLayoutVc: UIViewController {
         
         Back.IN(SuperV).TOP(10).LEFT(10).BOTTOM(10).RIGHT(10).MAKE()
         
-        Container.IN(Back).SIZE(200, 200).CENTER.MAKE()
+        Container.IN(Back).SIZE(200, 200).CENTER.MAKE(scale)
         
-        A.IN(Container).LEFT.TOP.SIZE(30, 30).MAKE()
-        B.IN(Container).LEFT.CENTER.SIZE(30, 30).MAKE()
-        C.IN(Container).LEFT.BOTTOM.SIZE(30, 30).MAKE()
+        A.IN(Container).LEFT.TOP.SIZE(30, 30).MAKE(scale)
+        B.IN(Container).LEFT.CENTER.SIZE(30, 30).MAKE(scale)
+        C.IN(Container).LEFT.BOTTOM.SIZE(30, 30).MAKE(scale)
         
-        D.IN(Container).RIGHT.TOP.SIZE(30, 30).MAKE()
-        E.IN(Container).RIGHT.CENTER.SIZE(30, 30).MAKE()
-        F.IN(Container).RIGHT.BOTTOM.SIZE(30, 30).MAKE()
+        D.IN(Container).RIGHT.TOP.SIZE(30, 30).MAKE(scale)
+        E.IN(Container).RIGHT.CENTER.SIZE(30, 30).MAKE(scale)
+        F.IN(Container).RIGHT.BOTTOM.SIZE(30, 30).MAKE(scale)
         
-        G.IN(Container).TOP.CENTER.SIZE(30, 30).MAKE()
-        H.IN(Container).BOTTOM.CENTER.CENTER.SIZE(30, 30).MAKE()
+        G.IN(Container).TOP.CENTER.SIZE(30, 30).MAKE(scale)
+        H.IN(Container).BOTTOM.CENTER.CENTER.SIZE(30, 30).MAKE(scale)
         
-        I.IN(Container).CENTER.SIZE(30, 30).MAKE()
+        I.IN(Container).CENTER.SIZE(30, 30).MAKE(scale)
         
-        J.LEFT(Container).TOP.SIZE(30, 30).MAKE()
-        K.LEFT(Container).CENTER.SIZE(30, 30).MAKE()
-        L.LEFT(Container).BOTTOM.SIZE(30, 30).MAKE()
+        J.LEFT(Container).TOP.SIZE(30, 30).MAKE(scale)
+        K.LEFT(Container).CENTER.SIZE(30, 30).MAKE(scale)
+        L.LEFT(Container).BOTTOM.SIZE(30, 30).MAKE(scale)
 
-        M.RIGHT(Container).TOP.SIZE(30, 30).MAKE()
-        N.RIGHT(Container).CENTER.SIZE(30, 30).MAKE()
-        O.RIGHT(Container).BOTTOM.SIZE(30, 30).MAKE()
+        M.RIGHT(Container).TOP.SIZE(30, 30).MAKE(scale)
+        N.RIGHT(Container).CENTER.SIZE(30, 30).MAKE(scale)
+        O.RIGHT(Container).BOTTOM.SIZE(30, 30).MAKE(scale)
         
-        P.TOP(Container).OFFSET(10).LEFT(10).SIZE(30, 30).MAKE()
-        Q.TOP(Container).CENTER.OFFSET(10).SIZE(30, 30).MAKE()
-        R.TOP(Container).OFFSET(10).RIGHT(10).SIZE(30, 30).MAKE()
+        P.TOP(Container).OFFSET(10).LEFT(10).SIZE(30, 30).MAKE(scale)
+        Q.TOP(Container).CENTER.OFFSET(10).SIZE(30, 30).MAKE(scale)
+        R.TOP(Container).OFFSET(10).RIGHT(10).SIZE(30, 30).MAKE(scale)
 
-        S.BOTTOM(Container).OFFSET(10).LEFT(10).WIDTH(30).HEIGHT(30).MAKE()
-        T.BOTTOM(Container).OFFSET(10).CENTER.SIZE(30, 30).MAKE()
-        U.BOTTOM(Container).OFFSET(10).RIGHT(10).WIDTH(30).HEIGHT(30).MAKE()
+        S.BOTTOM(Container).OFFSET(10).LEFT(10).WIDTH(30).HEIGHT(30).MAKE(scale)
+        T.BOTTOM(Container).OFFSET(10).CENTER.SIZE(30, 30).MAKE(scale)
+        U.BOTTOM(Container).OFFSET(10).RIGHT(10).WIDTH(30).HEIGHT(30).MAKE(scale)
         
     }
     

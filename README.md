@@ -5,31 +5,31 @@
 Each line should end with MAKE(), which return the layoutConstraint than made and installed:
 ![](https://github.com/labi3285/QXConsMaker/blob/master/pic_01.png)  
 ```objc
-        A.LEFT.EQUAL(SuperV).OFFSET(20).MAKE()
-        A.RIGHT.EQUAL(SuperV).OFFSET(-20).MAKE()
-        A.TOP.EQUAL(SuperV).OFFSET(64 + 20).MAKE()
-        A.BOTTOM.EQUAL(SuperV).OFFSET(-20).MAKE()
-        
-        B.CENTER_X.EQUAL(A).MAKE()
-        B.CENTER_Y.EQUAL(A).MAKE()
-        B.WIDTH.EQUAL(100).MAKE()
-        B.HEIGHT.EQUAL(B).WIDTH.MAKE()
-        
-        T1.LEFT.EQUAL(A).OFFSET(10).MAKE()
-        T1.TOP.EQUAL(A).OFFSET(100).MAKE()
-        
-        T2.LEFT.EQUAL(T1).RIGHT.OFFSET(10).MAKE()
-        T2.RIGHT.LESS_THAN_OR_EQUAL(A).OFFSET(-10).MAKE()
-        T2.CENTER_Y.EQUAL(T1).MAKE()
-        
-        C.LEFT.EQUAL(A).MAKE()
-        C.WIDTH.EQUAL(A).RATIO(0.5).MAKE()
-        C.HEIGHT.EQUAL(100).MAKE()
-        C.TOP.EQUAL(B).BOTTOM.MAKE()
-        
-        D.WIDTH.EQUAL(100).MAKE()
-        D.LEFT.EQUAL(A).RIGHT.RATIO(0.5).MAKE()
-        D.TOP.EQUAL(C).BOTTOM.MAKE()
+A.LEFT.EQUAL(SuperV).OFFSET(20).MAKE()
+A.RIGHT.EQUAL(SuperV).OFFSET(-20).MAKE()
+A.TOP.EQUAL(SuperV).OFFSET(64 + 20).MAKE()
+A.BOTTOM.EQUAL(SuperV).OFFSET(-20).MAKE()
+
+B.CENTER_X.EQUAL(A).MAKE()
+B.CENTER_Y.EQUAL(A).MAKE()
+B.WIDTH.EQUAL(100).MAKE()
+B.HEIGHT.EQUAL(B).WIDTH.MAKE()
+
+T1.LEFT.EQUAL(A).OFFSET(10).MAKE()
+T1.TOP.EQUAL(A).OFFSET(100).MAKE()
+
+T2.LEFT.EQUAL(T1).RIGHT.OFFSET(10).MAKE()
+T2.RIGHT.LESS_THAN_OR_EQUAL(A).OFFSET(-10).MAKE()
+T2.CENTER_Y.EQUAL(T1).MAKE()
+
+C.LEFT.EQUAL(A).MAKE()
+C.WIDTH.EQUAL(A).RATIO(0.5).MAKE()
+C.HEIGHT.EQUAL(100).MAKE()
+C.TOP.EQUAL(B).BOTTOM.MAKE()
+
+D.WIDTH.EQUAL(100).MAKE()
+D.LEFT.EQUAL(A).RIGHT.RATIO(0.5).MAKE()
+D.TOP.EQUAL(C).BOTTOM.MAKE()
 ```
 
 
@@ -37,38 +37,37 @@ Each line should end with MAKE(), which return the layoutConstraint than made an
 Each line should end with MAKE(), which return an array of layoutConstrant than made and installed:
 ![](https://github.com/labi3285/QXConsMaker/blob/master/pic_02.png)  
 ```objc
-        A.WIDTH.EQUAL(30).MAKE()
-        A.HEIGHT.EQUAL(30).MAKE()
-        MAKE_EQUAL_SIZE(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R)
+Back.IN(SuperV).TOP(10).LEFT(10).BOTTOM(10).RIGHT(10).MAKE()
         
-        A.IN(Container).LEFT.TOP.MAKE()
-        B.IN(Container).LEFT.CENTER.MAKE()
-        C.IN(Container).LEFT.BOTTOM.MAKE()
+Container.IN(Back).SIZE(200, 200).CENTER.MAKE(scale)
         
-        D.IN(Container).RIGHT.TOP.MAKE()
-        E.IN(Container).RIGHT.CENTER.MAKE()
-        F.IN(Container).RIGHT.BOTTOM.MAKE()
+A.IN(Container).LEFT.TOP.SIZE(30, 30).MAKE(scale)
+B.IN(Container).LEFT.CENTER.SIZE(30, 30).MAKE(scale)
+C.IN(Container).LEFT.BOTTOM.SIZE(30, 30).MAKE(scale)
         
-        G.IN(Container).TOP.CENTER.MAKE()
-        H.IN(Container).BOTTOM.CENTER.CENTER.MAKE()
+D.IN(Container).RIGHT.TOP.SIZE(30, 30).MAKE(scale)
+E.IN(Container).RIGHT.CENTER.SIZE(30, 30).MAKE(scale)
+F.IN(Container).RIGHT.BOTTOM.SIZE(30, 30).MAKE(scale)
         
-        I.IN(Container).CENTER.MAKE()
+G.IN(Container).TOP.CENTER.SIZE(30, 30).MAKE(scale)
+H.IN(Container).BOTTOM.CENTER.CENTER.SIZE(30, 30).MAKE(scale)
         
-        J.LEFT(Container).TOP.MAKE()
-        K.LEFT(Container).CENTER.MAKE()
-        L.LEFT(Container).BOTTOM.MAKE()
+I.IN(Container).CENTER.SIZE(30, 30).MAKE(scale)
 
-        M.RIGHT(Container).TOP.MAKE()
-        N.RIGHT(Container).CENTER.MAKE()
-        O.RIGHT(Container).BOTTOM.MAKE()
-        
-        P.TOP(Container).OFFSET(10).LEFT(10).MAKE()
-        Q.TOP(Container).CENTER.OFFSET(10).MAKE()
-        R.TOP(Container).OFFSET(10).RIGHT(10).MAKE()
+J.LEFT(Container).TOP.SIZE(30, 30).MAKE(scale)
+K.LEFT(Container).CENTER.SIZE(30, 30).MAKE(scale)
+L.LEFT(Container).BOTTOM.SIZE(30, 30).MAKE(scale)
 
-        S.BOTTOM(Container).OFFSET(10).LEFT(10).WIDTH(30).HEIGHT(30).MAKE()
-        T.BOTTOM(Container).OFFSET(10).CENTER.SIZE(30, 30).MAKE()
-        U.BOTTOM(Container).OFFSET(10).RIGHT(10).WIDTH(30).HEIGHT(30).MAKE()
+M.RIGHT(Container).TOP.SIZE(30, 30).MAKE(scale)
+N.RIGHT(Container).CENTER.SIZE(30, 30).MAKE(scale)
+O.RIGHT(Container).BOTTOM.SIZE(30, 30).MAKE(scale)
+        
+P.TOP(Container).OFFSET(10).LEFT(10).SIZE(30, 30).MAKE(scale)
+Q.TOP(Container).CENTER.OFFSET(10).SIZE(30, 30).MAKE(scale)
+R.TOP(Container).OFFSET(10).RIGHT(10).SIZE(30, 30).MAKE(scale)
+     S.BOTTOM(Container).OFFSET(10).LEFT(10).WIDTH(30).HEIGHT(30).MAKE(scale)
+T.BOTTOM(Container).OFFSET(10).CENTER.SIZE(30, 30).MAKE(scale)
+        U.BOTTOM(Container).OFFSET(10).RIGHT(10).WIDTH(30).HEIGHT(30).MAKE(scale)
 ```
 
 

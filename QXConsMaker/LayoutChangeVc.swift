@@ -12,6 +12,7 @@ class LayoutChangeVc: UIViewController {
     
     var widthSlider: UISlider?
     var widthCons: NSLayoutConstraint?
+    let scale: CGFloat = 1
 
     override func viewDidLoad() {
         
@@ -30,19 +31,20 @@ class LayoutChangeVc: UIViewController {
         
         let sharp = NewSharp(title: "", inView: SuperV)
         
-        widthSlider!.CENTER_X.EQUAL(SuperV).MAKE()
-        widthSlider!.CENTER_Y.EQUAL(SuperV).MAKE()
-        widthSlider!.WIDTH.EQUAL(200).MAKE()
         
-        sharp.CENTER_X.EQUAL(SuperV).MAKE()
+        widthSlider!.CENTER_X.EQUAL(SuperV).MAKE(scale)
+        widthSlider!.CENTER_Y.EQUAL(SuperV).MAKE(scale)
+        widthSlider!.WIDTH.EQUAL(200).MAKE(scale)
+        
+        sharp.CENTER_X.EQUAL(SuperV).MAKE(scale)
         sharp.TOP.EQUAL(SuperV).OFFSET(100).MAKE()
-        widthCons = sharp.WIDTH.EQUAL(10).MAKE()
-        sharp.HEIGHT.EQUAL(100).MAKE()
+        widthCons = sharp.WIDTH.EQUAL(10).MAKE(scale)
+        sharp.HEIGHT.EQUAL(100).MAKE(scale)
         
     }
     
     @objc func widthSliderValueChange(_ sender: UISlider) {
-        widthCons?.constant = CGFloat(sender.value)
+        widthCons?.constant = CGFloat(sender.value) * scale
     }
     
 }

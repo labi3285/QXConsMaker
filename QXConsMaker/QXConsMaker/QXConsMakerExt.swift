@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension UIView {
+extension UIView {
     
     public func IN(_ V: UIView) -> QXConsesMaker        { return QXConsesMaker.updateMaker(view: self, containerView: V, isIn: true, possition: nil) }
     
@@ -20,15 +20,9 @@ public extension UIView {
     
     public func RIGHT(_ V: UIView) -> QXConsesMaker     { return QXConsesMaker.updateMaker(view: self, containerView: V, isIn: false, possition: .right) }
     
-    @discardableResult public func MAKE(W w: CGFloat, H h: CGFloat) -> [NSLayoutConstraint] {
-        let cons1 = self.WIDTH.EQUAL(w).MAKE()
-        let cons2 = self.HEIGHT.EQUAL(h).MAKE()
-        return [cons1, cons2]
-    }
-    
 }
 
-public extension QXConsesMaker {
+extension QXConsesMaker {
     
     public func SIZE(_ W: CGFloat, _ H: CGFloat) -> QXConsesMaker { return WIDTH(W).HEIGHT(H) }
     
@@ -50,7 +44,8 @@ public extension QXConsesMaker {
     public var TOP: QXConsesMaker                      { return TOP(0) }
     public var BOTTOM: QXConsesMaker                   { return BOTTOM(0) }
     
-    @discardableResult func MAKE() -> [NSLayoutConstraint]         { return QXConsesMaker.makeUpConstraints() }
+    @discardableResult func MAKE() -> [NSLayoutConstraint]         { return QXConsesMaker.makeUpConstraints(scale: 1) }
+    @discardableResult func MAKE(_ scale: CGFloat) -> [NSLayoutConstraint]         { return QXConsesMaker.makeUpConstraints(scale: scale) }
     
 }
 
@@ -153,7 +148,7 @@ public struct QXConsesMaker {
         return self.maker
     }
     
-    fileprivate static func makeUpConstraints() -> [NSLayoutConstraint] {
+    fileprivate static func makeUpConstraints(scale s: CGFloat) -> [NSLayoutConstraint] {
         
         let view = QXConsesMaker.maker.view!
         let containerView = QXConsesMaker.maker.containerView!
@@ -179,75 +174,75 @@ public struct QXConsesMaker {
                 if let pos = QXConsesMaker.maker.possition {
                     switch pos {
                     case .top:
-                        conses.append(view.TOP.EQUAL(containerView).OFFSET(offset).MAKE())
+                        conses.append(view.TOP.EQUAL(containerView).OFFSET(offset).MAKE(s))
                     case .left:
-                        conses.append(view.LEFT.EQUAL(containerView).OFFSET(offset).MAKE())
+                        conses.append(view.LEFT.EQUAL(containerView).OFFSET(offset).MAKE(s))
                     case .bottom:
-                        conses.append(view.BOTTOM.EQUAL(containerView).OFFSET(-offset).MAKE())
+                        conses.append(view.BOTTOM.EQUAL(containerView).OFFSET(-offset).MAKE(s))
                     case .right:
-                        conses.append(view.RIGHT.EQUAL(containerView).OFFSET(-offset).MAKE())
+                        conses.append(view.RIGHT.EQUAL(containerView).OFFSET(-offset).MAKE(s))
                     }
                 }
             } else {
                 if let pos = QXConsesMaker.maker.possition {
                     switch pos {
                     case .top:
-                        conses.append(view.BOTTOM.EQUAL(containerView).TOP.OFFSET(-offset).MAKE())
+                        conses.append(view.BOTTOM.EQUAL(containerView).TOP.OFFSET(-offset).MAKE(s))
                     case .left:
-                        conses.append(view.RIGHT.EQUAL(containerView).LEFT.OFFSET(-offset).MAKE())
+                        conses.append(view.RIGHT.EQUAL(containerView).LEFT.OFFSET(-offset).MAKE(s))
                     case .bottom:
-                        conses.append(view.TOP.EQUAL(containerView).BOTTOM.OFFSET(offset).MAKE())
+                        conses.append(view.TOP.EQUAL(containerView).BOTTOM.OFFSET(offset).MAKE(s))
                     case .right:
-                        conses.append(view.LEFT.EQUAL(containerView).RIGHT.OFFSET(offset).MAKE())
+                        conses.append(view.LEFT.EQUAL(containerView).RIGHT.OFFSET(offset).MAKE(s))
                     }
                 }
             }
         }
         
         if let width = QXConsesMaker.maker.width {
-            conses.append(view.WIDTH.EQUAL(width).MAKE())
+            conses.append(view.WIDTH.EQUAL(width).MAKE(s))
         }
         if let height = QXConsesMaker.maker.height {
-            conses.append(view.HEIGHT.EQUAL(height).MAKE())
+            conses.append(view.HEIGHT.EQUAL(height).MAKE(s))
         }
         
         if let topMargin = QXConsesMaker.maker.topMargin {
-            conses.append(view.TOP.EQUAL(containerView).OFFSET(topMargin).MAKE())
+            conses.append(view.TOP.EQUAL(containerView).OFFSET(topMargin).MAKE(s))
         }
         if let leftMargin = QXConsesMaker.maker.leftMargin {
-            conses.append(view.LEFT.EQUAL(containerView).OFFSET(leftMargin).MAKE())
+            conses.append(view.LEFT.EQUAL(containerView).OFFSET(leftMargin).MAKE(s))
         }
         if let bottomMargin = QXConsesMaker.maker.bottomMargin {
-            conses.append(view.BOTTOM.EQUAL(containerView).OFFSET(bottomMargin).MAKE())
+            conses.append(view.BOTTOM.EQUAL(containerView).OFFSET(bottomMargin).MAKE(s))
         }
         if let rightMargin = QXConsesMaker.maker.rightMargin {
-            conses.append(view.RIGHT.EQUAL(containerView).OFFSET(rightMargin).MAKE())
+            conses.append(view.RIGHT.EQUAL(containerView).OFFSET(rightMargin).MAKE(s))
         }
         
         if QXConsesMaker.maker.centerX {
-            conses.append(view.CENTER_X.EQUAL(containerView).MAKE())
+            conses.append(view.CENTER_X.EQUAL(containerView).MAKE(s))
         }
         
         if QXConsesMaker.maker.centerY {
-            conses.append(view.CENTER_Y.EQUAL(containerView).MAKE())
+            conses.append(view.CENTER_Y.EQUAL(containerView).MAKE(s))
         }
         
         if QXConsesMaker.maker.center {
             if let pos = QXConsesMaker.maker.possition {
                 switch pos {
                 case .bottom, .top:
-                    conses.append(view.CENTER_X.EQUAL(containerView).MAKE())
+                    conses.append(view.CENTER_X.EQUAL(containerView).MAKE(s))
                 case .left, .right:
-                    conses.append(view.CENTER_Y.EQUAL(containerView).MAKE())
+                    conses.append(view.CENTER_Y.EQUAL(containerView).MAKE(s))
                 }
             } else {
                 if QXConsesMaker.maker.leftMargin != nil || QXConsesMaker.maker.rightMargin != nil {
-                    conses.append(view.CENTER_Y.EQUAL(containerView).MAKE())
+                    conses.append(view.CENTER_Y.EQUAL(containerView).MAKE(s))
                 } else if QXConsesMaker.maker.topMargin != nil || QXConsesMaker.maker.bottomMargin != nil {
-                    conses.append(view.CENTER_X.EQUAL(containerView).MAKE())
+                    conses.append(view.CENTER_X.EQUAL(containerView).MAKE(s))
                 } else {
-                    conses.append(view.CENTER_X.EQUAL(containerView).MAKE())
-                    conses.append(view.CENTER_Y.EQUAL(containerView).MAKE())
+                    conses.append(view.CENTER_X.EQUAL(containerView).MAKE(s))
+                    conses.append(view.CENTER_Y.EQUAL(containerView).MAKE(s))
                 }
             }
         }

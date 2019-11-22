@@ -10,7 +10,7 @@ import UIKit
 
 //MARK: -
 
-public extension UIView {
+extension UIView {
     
     public var LEFT: QXConsMaker       { return QXConsMaker.updateMaker(view: self, attribute: .left) }
     public var RIGHT: QXConsMaker      { return QXConsMaker.updateMaker(view: self, attribute: .right) }
@@ -89,8 +89,9 @@ extension QXConsMaker {
     public func PRIORITY(_ P: CGFloat) -> QXConsMaker    { return QXConsMaker.updateMaker(priority: P) }
     
     
-    @discardableResult public func MAKE() -> NSLayoutConstraint   { return QXConsMaker.makeUpConstraint() }
-    
+    @discardableResult public func MAKE() -> NSLayoutConstraint   { return QXConsMaker.makeUpConstraint(scale: 1) }
+    @discardableResult public func MAKE(_ scale: CGFloat) -> NSLayoutConstraint   { return QXConsMaker.makeUpConstraint(scale: scale) }
+
 }
 
 
@@ -163,7 +164,7 @@ public struct QXConsMaker {
         return self.maker
     }
     
-    fileprivate static func makeUpConstraint() -> NSLayoutConstraint {
+    fileprivate static func makeUpConstraint(scale s: CGFloat) -> NSLayoutConstraint {
         if let v = QXConsMaker.maker.firstItem {
             v.translatesAutoresizingMaskIntoConstraints = false
         }
@@ -174,7 +175,7 @@ public struct QXConsMaker {
                                toItem:       self.maker.secondItem,
                                attribute:    self.maker.secondItemAttribute!,
                                multiplier:   self.maker.ratio,
-                               constant:     self.maker.offset)
+                               constant:     self.maker.offset * s)
         QXConsMaker.install(constraint: cons)
         QXConsMaker.maker.firstItem!.CONSES.add(cons)
         QXConsMaker.maker = QXConsMaker()
