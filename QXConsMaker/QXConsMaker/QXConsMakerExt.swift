@@ -44,8 +44,8 @@ extension QXConsesMaker {
     public var TOP: QXConsesMaker                      { return TOP(0) }
     public var BOTTOM: QXConsesMaker                   { return BOTTOM(0) }
     
-    @discardableResult func MAKE() -> [NSLayoutConstraint]         { return QXConsesMaker.makeUpConstraints(scale: 1) }
-    @discardableResult func MAKE(_ scale: CGFloat) -> [NSLayoutConstraint]         { return QXConsesMaker.makeUpConstraints(scale: scale) }
+    @discardableResult public func MAKE() -> [NSLayoutConstraint]         { return QXConsesMaker.makeUpConstraints(scale: 1) }
+    @discardableResult public func MAKE(_ scale: CGFloat) -> [NSLayoutConstraint]         { return QXConsesMaker.makeUpConstraints(scale: scale) }
     
 }
 
